@@ -20,7 +20,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initScanner() {
-        IntentIntegrator(this).initiateScan()
+      val integrator = IntentIntegrator(this)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
+        integrator.setPrompt("Subdescrito")
+        integrator.setTorchEnabled(true)
+        integrator.setBeepEnabled(true)
+        integrator.initiateScan()
+
+
+
     }
 
 
